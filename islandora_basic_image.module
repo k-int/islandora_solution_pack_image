@@ -140,7 +140,7 @@ function islandora_basic_image_preprocess_islandora_basic_image(array &$variable
     $variables['islandora_thumbnail_img'] = theme('image', $params);
   }
   // Medium size.
-  if (isset($islandora_object['MEDIUM_SIZE']) ) {
+  if (isset($islandora_object['MEDIUM_SIZE'])) {
     $medium_size_url = url("islandora/object/{$islandora_object->id}/datastream/MEDIUM_SIZE/view");
     $params = array(
       'title' => $islandora_object->label,
@@ -198,3 +198,4 @@ function islandora_basic_image_islandora_sp_basic_image_islandora_ingest_steps()
     ),
   );
 }
+

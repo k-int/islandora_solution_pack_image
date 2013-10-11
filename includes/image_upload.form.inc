@@ -56,6 +56,9 @@ function islandora_basic_image_image_upload_form_submit(array $form, array &$for
   $file = file_load($form_state['values']['file']);
   $path = drupal_realpath($file->uri);
   $ds->setContentFromFile($path, FALSE);
-  $ds->label = $file->filename;
+  //Changed this
+  //$ds->label = $file->filename;
+  $filename = preg_replace("/\\.[^.\\s]{3,4}$/", "", $file->filename);
+  $ds->label = $filename;
   $ds->mimetype = $file->filemime;
 }
